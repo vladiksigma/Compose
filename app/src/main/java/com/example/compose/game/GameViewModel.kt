@@ -67,17 +67,7 @@ class GameViewModel : ViewModel() {
             return
         }
 
-        if(state.attemptsLeft - 1 >= 0){
-            _uiState.update {
-                it.copy(
-                    inputText = "",
-                    hintMessage = "Вы проиграли(((",
-                    isWin = false,
-                    isGameOver = true,
-                    showPlayAgainButton = true
-                )
-            }
-        }
+
 
         if(guess > secretNumber){
             _uiState.update {
@@ -101,6 +91,18 @@ class GameViewModel : ViewModel() {
                     isWin = false,
                     isGameOver = false,
                     showPlayAgainButton = false
+                )
+            }
+        }
+
+        if(state.attemptsLeft - 1 <= 0){
+            _uiState.update {
+                it.copy(
+                    inputText = "",
+                    hintMessage = "Вы проиграли(((",
+                    isWin = false,
+                    isGameOver = true,
+                    showPlayAgainButton = true
                 )
             }
         }

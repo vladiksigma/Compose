@@ -94,7 +94,7 @@ fun GameScreen(
                 )
             } else {
                 Image(
-                    contentDescription = "", painter = painterResource(R.drawable.win),
+                    contentDescription = "", painter = painterResource(R.drawable.lose),
                     modifier = Modifier.size(250.dp)
                 )
 
